@@ -4,9 +4,11 @@ sc_agent_generate_task_for_student
     [sc-agent for student task generation] (* <- lang_en;; *);
 <- abstract_sc_agent;
 
-// => nrel_primary_initiation_condition:
-//     (sc_event_after_generate_outgoing_arc => action_initiated);
-// => nrel_initiation_con+dition_and_result:
+=> nrel_primary_initiation_condition:
+    (sc_event_after_generate_outgoing_arc => action_initiated);
+=> nrel_initiation_condition_and_result:
+    (..sc_agent_generate_task_for_student_initiation_condition => 
+        ..sc_agent_generate_task_for_student_result_condition);
 
 => nrel_sc_agent_action_class:
     action_agent_generate_task_for_student
@@ -40,7 +42,6 @@ sc_agent_generate_task_for_student
 	action_initiated _-> .._action;;
 	action _-> .._action;;
 	.._action _-> rrel_1:: .._parameter1;;
-    .._action _-> nrel_expected_answer:: .._parameter2;;
 *];;
 
 ..sc_agent_generate_task_for_student_result_condition
