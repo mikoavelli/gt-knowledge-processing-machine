@@ -1,0 +1,202 @@
+agent_generate_task_for_student
+=> nrel_main_idtf:
+    [Агентная программа для генерации задания для студента] (* <- lang_ru;; *);
+    [Agent program for student task generation] (* <- lang_en;; *);
+<- scp_program;
+<- agent_scp_program;
+-> rrel_key_sc_element: .._process1;;
+
+agent_generate_task_for_student = [*
+...._process1
+_<- scp_process;
+
+_-> rrel_1:: rrel_in:: _event;
+_-> rrel_2:: rrel_in:: _input_arc;
+_<= nrel_decomposition_of_action:: .._actions (*
+
+    _-> rrel_1:: .._agent_generate_task_for_student_operator_start (*
+        _<- searchElStr3;;
+        _-> rrel_1:: rrel_assign:: rrel_scp_var:: _temp;;
+        _-> rrel_2:: rrel_fixed:: rrel_scp_const:: _input_arc;;
+        _-> rrel_3:: rrel_assign:: rrel_scp_var:: _quest;;
+
+        _=> nrel_goto:: .._agent_generate_task_for_student_operator1;;
+    *);;
+
+    _-> .._agent_generate_task_for_student_operator1 (*
+        _<- searchElStr3;;
+        _-> rrel_1:: rrel_fixed:: rrel_scp_const:: action_generate_task_for_student;;
+        _-> rrel_2:: rrel_assign:: rrel_pos_const_perm:: rrel_scp_var:: _arc;;
+        _-> rrel_3:: rrel_fixed:: rrel_scp_var:: _quest;;
+
+        _=> nrel_then:: .._agent_generate_task_for_student_operator_message;; 
+        _=> nrel_else:: .._agent_generate_task_for_student_operator_return;;
+    *);;
+
+    _-> .._agent_generate_task_for_student_operator_return (*
+        _<- return;;
+    *);;
+
+    _-> .._agent_generate_task_for_student_operator_message (*
+        _<- printNl;;
+        _-> rrel_1:: rrel_fixed:: rrel_scp_const:: [Start work _agent_generate_task_for_student];;
+
+        _=> nrel_goto:: .._agent_generate_task_for_student_get_args;;
+    *);;
+
+    _-> .._agent_generate_task_for_student_get_args (*
+        _<- searchElStr5;;
+        _-> rrel_1:: rrel_fixed:: rrel_scp_var:: _quest;;
+        _-> rrel_2:: rrel_assign:: rrel_scp_var:: rrel_pos_const_perm:: _arc1;;
+        _-> rrel_3:: rrel_assign:: rrel_scp_var:: _param;;
+        _-> rrel_4:: rrel_assign:: rrel_scp_var:: rrel_pos_const_perm:: _arc2;;
+        _-> rrel_5:: rrel_fixed:: rrel_scp_const:: rrel_1;;
+
+        _=> nrel_then:: .._agent_generate_task_for_student_operator2;;
+        _=> nrel_else:: .._agent_generate_task_for_student_unsuccess;;
+    *);;
+
+    _-> .._agent_generate_task_for_student_unsuccess (*
+        _<- genElStr3;;
+        _-> rrel_1:: rrel_fixed:: rrel_scp_const:: action_finished_unsuccessfully;;
+        _-> rrel_2:: rrel_assign::rrel_pos_const_perm:: rrel_scp_var:: _arc1;;
+        _-> rrel_3:: rrel_fixed:: rrel_scp_var:: _quest;;
+
+        _=> nrel_goto:: .._agent_generate_task_for_student_operator_return;;
+    *);;
+    
+    _-> .._agent_generate_task_for_student_operator2 (*
+        _<- genElStr3;;
+        _-> rrel_1:: rrel_fixed:: rrel_scp_const:: action_determine_number_of_graphs_for_task;;
+        _-> rrel_2:: rrel_assign:: rrel_scp_var:: rrel_pos_const_perm:: _arc_to_action;;
+        _-> rrel_3:: rrel_assign:: rrel_scp_var:: _new_action;;
+
+        _=> nrel_goto:: .._agent_generate_task_for_student_operator3;;
+    *);;
+
+    _-> .._agent_generate_task_for_student_operator3 (*
+        _<- genElStr3;;
+        _-> rrel_1:: rrel_fixed:: rrel_scp_const:: action;;
+        _-> rrel_2:: rrel_assign:: rrel_scp_var:: rrel_pos_const_perm:: _arc_to_action_new;;
+        _-> rrel_3:: rrel_fixed:: rrel_scp_var:: _new_action;;
+
+        _=> nrel_goto:: .._agent_generate_task_for_student_operator4;;
+    *);;
+
+    _-> .._agent_generate_task_for_student_operator4 (*
+        _<- genElStr5;;
+        _-> rrel_1:: rrel_fixed:: rrel_scp_var:: _new_action;;
+        _-> rrel_2:: rrel_assign:: rrel_scp_var:: rrel_pos_const_perm:: _arc_to_p1;;
+        _-> rrel_3:: rrel_fixed:: rrel_scp_var:: _param1;;
+        _-> rrel_4:: rrel_assign:: rrel_scp_var:: rrel_pos_const_perm:: _arc_to_arc1;;
+        _-> rrel_5:: rrel_fixed:: rrel_scp_const:: rrel_1;;
+
+        _=> nrel_goto:: .._agent_generate_task_for_student_operator5;;
+    *);;
+
+    _-> .._agent_generate_task_for_student_operator5 (*
+        _<- genElStr5;;
+        _-> rrel_1:: rrel_fixed:: rrel_scp_var:: _new_action;;
+        _-> rrel_2:: rrel_assign:: rrel_scp_var:: rrel_pos_const_perm:: _arc_to_p2;;
+        _-> rrel_3:: rrel_fixed:: rrel_scp_var:: _param2;;
+        _-> rrel_4:: rrel_assign:: rrel_scp_var:: rrel_pos_const_perm:: _arc_to_arc2;;
+        _-> rrel_5:: rrel_fixed:: rrel_scp_const:: rrel_2;;
+
+        _=> nrel_goto:: .._agent_generate_task_for_student_operator6;;
+    *);;
+
+    _-> .._agent_generate_task_for_student_operator6 (*
+        _<- genElStr3;;
+        _-> rrel_1:: rrel_fixed:: rrel_scp_const:: action_initiated;;
+        _-> rrel_2:: rrel_assign:: rrel_scp_var:: rrel_pos_const_perm:: _arc_to_action2;;
+        _-> rrel_3:: rrel_fixed:: rrel_scp_var:: _new_action;;
+
+        _=> nrel_goto:: .._agent_generate_task_for_student_operator_wait;;
+    *);;
+    //////
+
+    _-> ...._agent_generate_task_for_student_operator7 (*
+        _<- searchElStr3;;
+        _->rrel_1:: rrel_fixed:: rrel_scp_const:: action_determine_number_of_graphs_for_task
+
+    *);;
+
+    //////
+
+    _-> .._agent_generate_task_for_student_wait (*
+        _<- sys_wait;;
+        _-> rrel_1:: rrel_fixed:: rrel_scp_const:: sc_event_after_generate_outgoing_arc;;
+        _-> rrel_2:: rrel_fixed:: rrel_scp_var:: _new_action;;
+
+        _=> nrel_goto:: .._agent_generate_task_for_student_check_state;;
+    *);;
+
+    _-> .._agent_generate_task_for_student_check_state (*
+        _<- searchElStr5;;
+        _-> rrel_1:: rrel_fixed:: rrel_scp_var:: _new_action;;
+        _-> rrel_2:: rrel_assign:: rrel_scp_var:: rrel_pos_const_perm:: _arc_to_result;;
+        _-> rrel_3:: rrel_assign:: rrel_scp_var:: rrel_struct:: _result_structure;;
+        _-> rrel_4:: rrel_assign:: rrel_scp_var:: rrel_pos_const_perm:: _arc_to_arc3;;
+        _-> rrel_5:: rrel_fixed:: rrel_scp_const:: nrel_result;;
+
+        _=> nrel_then:: .._agent_generate_task_for_student_call;;
+        _=> nrel_else:: .._agent_generate_task_for_student_operator_print;;
+    *);;
+
+    _-> .._agent_generate_task_for_student_operator_print (*
+        _<- printNl;;
+        _-> rrel_1:: rrel_fixed:: rrel_scp_const:: [Can not find result node];;
+
+        _=> nrel_goto:: .._agent_generate_task_for_student_unsuccess;;
+    *);;
+
+    _-> .._agent_generate_task_for_student_call_operator (*
+        _<- call;;
+        _-> rrel_1:: rrel_fixed:: rrel_scp_const:: proc_generate_task_for_student;;
+        _-> rrel_2:: rrel_fixed:: rrel_scp_const:: .._agent_generate_task_for_student_params (*
+            _-> rrel_1:: rrel_fixed:: rrel_scp_var:: _param;;
+            _-> rrel_2:: rrel_assign:: rrel_scp_var:: _rrel_struct:: _result;;
+        *);;
+        _-> rrel_3:: rrel_assign:: rrel_scp_var:: _descr;;
+
+        _=> nrel_goto:: ...._agent_generate_task_for_student_wait;;
+    *);;
+
+    _-> .._agent_generate_task_for_student_wait (*
+        _<- waitReturn;;
+        _-> rrel_1:: rrel_fixed:: rrel_scp_var:: _descr;;
+
+        _=> nrel_goto:: .._agent_generate_task_for_student_check_result;;
+    *);;
+
+    _-> .._agent_generate_task_for_student_check_result (*
+         _<- ifVarAssign;;
+        _-> rrel_1:: rrel_fixed:: rrel_scp_var:: _result;;
+
+        _=> nrel_then:: .._agent_generate_task_for_student_get_result;;
+        _=> nrel_else:: .._agent_generate_task_for_student_unsuccess;;
+    *);;
+
+    _-> .._agent_generate_task_for_student_get_result (*
+        _<- genElStr5;;
+        _-> rrel_1:: rrel_fixed:: rrel_scp_var:: _quest;;
+        _-> rrel_2:: rrel_assign:: rrel_scp_var:: rrel_common:: rrel_const:: _arc_to_result;;
+        _-> rrel_3:: rrel_fixed:: rrel_scp_var:: _result;;
+        _-> rrel_4:: rrel_assign:: rrel_scp_var:: rrel_pos_const_perm:: _arc_to_arc;;
+        _-> rrel_5:: rrel_fixed:: rrel_scp_const:: nrel_result;;
+
+        _=> nrel_goto:: .._agent_generate_task_for_student_success;;
+    *);;
+
+    _-> .._agent_generate_task_for_student_success (*
+        _<- genElStr3;;
+        _-> rrel_1:: rrel_fixed:: rrel_scp_const:: action_finished_successfully;;
+        _-> rrel_2:: rrel_assign:: rrel_pos_const_perm:: rrel_scp_var:: _arc1;;
+        _-> rrel_3:: rrel_fixed:: rrel_scp_var:: _quest;;
+
+        _=> nrel_goto:: .._agent_generate_task_for_student_operator_return;;
+    *);;
+
+*);;
+
+*];;
