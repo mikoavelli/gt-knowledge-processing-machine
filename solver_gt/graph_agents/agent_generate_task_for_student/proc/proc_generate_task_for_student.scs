@@ -27,7 +27,7 @@ _<= nrel_decomposition_of_action:: .._actions (*
         _-> rrel_3:: rrel_assign:: rrel_scp_var:: rrel_node:: _node;;
         _-> rrel_set_4:: rrel_assign:: rrel_scp_var:: _node_set;;
 
-        _=> nrel_goto:: ...._cycle_node;;
+        _=> nrel_goto:: .._cycle_node;;
     *);; 
 
     _-> .._cycle_node (*

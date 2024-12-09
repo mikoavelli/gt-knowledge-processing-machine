@@ -7,7 +7,7 @@ agent_generate_task_for_student
 -> rrel_key_sc_element: .._process1;;
 
 agent_generate_task_for_student = [*
-...._process1
+.._process1
 _<- scp_process;
 
 _-> rrel_1:: rrel_in:: _event;
@@ -98,7 +98,7 @@ _<= nrel_decomposition_of_action:: .._actions (*
         _<- genElStr5;;
         _-> rrel_1:: rrel_fixed:: rrel_scp_var:: _new_action_determine_number_of_graphs_for_task;;
         _-> rrel_2:: rrel_assign:: rrel_scp_var:: rrel_pos_const_perm:: _arc_to_param;;
-        _-> rrel_3:: rrel_fixed:: rrel_scp_var:: _param1;;
+        _-> rrel_3:: rrel_fixed:: rrel_scp_var:: _param;;
         _-> rrel_4:: rrel_assign:: rrel_scp_var:: rrel_pos_const_perm:: _arc_to_arc_to_param;;
         _-> rrel_5:: rrel_fixed:: rrel_scp_const:: rrel_1;;
 
@@ -134,7 +134,6 @@ _<= nrel_decomposition_of_action:: .._actions (*
         _=> nrel_else:: .._unsuccess;;
     *);;
 
-    // cycle
     _-> .._cycle (*
         _<- ifGr;;
         _-> rrel_1:: rrel_fixed:: rrel_scp_var:: _result_determine_number_of_graphs_for_task;;

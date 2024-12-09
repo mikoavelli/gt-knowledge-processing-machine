@@ -11,7 +11,7 @@ sc_agent_generate_task_for_student
         ..sc_agent_generate_task_for_student_result_condition);
 
 => nrel_sc_agent_action_class:
-    action_agent_generate_task_for_student
+    action_generate_task_for_student
     (*
     <- sc_node_class;;
     <= nrel_inclusion:
