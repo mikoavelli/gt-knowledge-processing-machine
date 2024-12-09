@@ -111,7 +111,7 @@ _<= nrel_decomposition_of_action:: .._actions (*
         _-> rrel_2:: rrel_assign:: rrel_scp_var:: rrel_pos_const_perm:: _arc_to_action2;;
         _-> rrel_3:: rrel_fixed:: rrel_scp_var:: _new_action_determine_number_of_graphs_for_task;;
 
-        _=> nrel_goto:: .._find_agent_determine_number_of_graphs_for_task_result;;
+        _=> nrel_goto:: .._wait_for_agent_determine_number_of_graphs_for_task_result;;
     *);;
 
     _-> .._wait_for_agent_determine_number_of_graphs_for_task_result (*
@@ -130,7 +130,7 @@ _<= nrel_decomposition_of_action:: .._actions (*
         _-> rrel_4:: rrel_assign:: rrel_scp_var:: _arc_to_result;;
         _-> rrel_5:: rrel_fixed:: rrel_scp_const:: nrel_result;;
 
-        _=> nrel_then:: .._random;;
+        _=> nrel_then:: .._cycle;;
         _=> nrel_else:: .._unsuccess;;
     *);;
 

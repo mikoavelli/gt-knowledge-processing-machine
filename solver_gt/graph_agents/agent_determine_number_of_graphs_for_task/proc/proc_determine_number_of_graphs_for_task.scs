@@ -15,7 +15,7 @@ _-> rrel_2:: rrel_out:: _result;
 _<= nrel_decomposition_of_action:: .._actions (*
 
     _-> rrel_1:: .._operator_is_parameter_class (*
-        <-_ searchElStr5;;
+        _<- searchElStr5;;
         _-> rrel_1:: rrel_fixed:: rrel_scp_const:: concept_graph;;
         _-> rrel_2:: rrel_assign:: rrel_scp_var:: rrel_common:: _arc_to_concept_graph;;
         _-> rrel_3:: rrel_fixed:: rrel_scp_const:: _task_element;;
@@ -28,7 +28,7 @@ _<= nrel_decomposition_of_action:: .._actions (*
 
 
     _-> .._operator_find_arity_of_relation (*
-        <-_ searchElStr5;;
+        _<- searchElStr5;;
         _-> rrel_1:: rrel_fixed:: rrel_scp_const:: _task_element;;
         _-> rrel_2:: rrel_assign:: rrel_scp_var:: rrel_common:: _arc_to_arity;;
         _-> rrel_3:: rrel_assign:: rrel_scp_var:: _arity;;
@@ -41,7 +41,7 @@ _<= nrel_decomposition_of_action:: .._actions (*
     
     
     _-> .._operator_create_result_with_message_arity_not_found (*
-    	<-_ varAssign;;
+    	_<- varAssign;;
         _-> rrel_1:: rrel_assign:: rrel_scp_var:: _result;;
         _-> rrel_2:: rrel_fixed:: rrel_scp_const:: [arity not found];;
         
@@ -50,12 +50,12 @@ _<= nrel_decomposition_of_action:: .._actions (*
 
 
     _-> .._operator_get_arity_of_relation_link (*
-        <-_ searchElStr5;;
-	_-> rrel_1:: rrel_fixed:: rrel_scp_var:: _arity;;
+        _<- searchElStr5;;
+        _-> rrel_1:: rrel_fixed:: rrel_scp_var:: _arity;;
         _-> rrel_2:: rrel_assign:: rrel_scp_var:: rrel_common:: _arc_to_arity_link;;
-	_-> rrel_3:: rrel_assign:: rrel_scp_var:: _arity_link;;
+        _-> rrel_3:: rrel_assign:: rrel_scp_var:: _arity_link;;
         _-> rrel_4:: rrel_assign:: rrel_scp_var:: rrel_pos_const_perm:: _arc_to_arc_to_arity_link;;
-	_-> rrel_5:: rrel_fixed:: rrel_scp_const:: nrel_system_identifier;;
+        _-> rrel_5:: rrel_fixed:: rrel_scp_const:: nrel_system_identifier;;
 
         _=> nrel_then:: .._operator_calculate_result_for_relation;; 
         _=> nrel_else:: .._operator_create_result_with_message_arity_link_not_found;;
@@ -63,7 +63,7 @@ _<= nrel_decomposition_of_action:: .._actions (*
     
     
     _-> .._operator_create_result_with_message_arity_link_not_found (*
-    	<-_ varAssign;;
+    	_<- varAssign;;
         _-> rrel_1:: rrel_assign:: rrel_scp_var:: _result;;
         _-> rrel_2:: rrel_fixed:: rrel_scp_const:: [arity link not found];;
         
@@ -72,7 +72,7 @@ _<= nrel_decomposition_of_action:: .._actions (*
 
 
     _-> .._operator_calculate_result_for_relation (*
-        <-_ contSub;;
+        _<- contSub;;
         _-> rrel_1:: rrel_assign:: rrel_scp_var:: _result_for_relation;;
         _-> rrel_2:: rrel_fixed:: rrel_scp_var:: _arity_link;;
         _-> rrel_3:: rrel_fixed:: rrel_scp_const:: [1];;
@@ -82,7 +82,7 @@ _<= nrel_decomposition_of_action:: .._actions (*
 
 
     _-> .._operator_create_result_for_class (*
-        <-_ varAssign;;
+        _<- varAssign;;
         _-> rrel_1:: rrel_assign:: rrel_scp_var:: _result;;
         _-> rrel_2:: rrel_fixed:: rrel_scp_const:: [1];;
 
@@ -91,7 +91,7 @@ _<= nrel_decomposition_of_action:: .._actions (*
 
 
     _-> .._operator_create_result_for_relation (*
-        <-_ varAssign;;
+        _<- varAssign;;
         _-> rrel_1:: rrel_assign:: rrel_scp_var:: _result;;
         _-> rrel_2:: rrel_fixed:: rrel_scp_const:: _result_for_relation;;
 
@@ -100,7 +100,7 @@ _<= nrel_decomposition_of_action:: .._actions (*
 
 
     _-> .._operator_return (*
-        <-_ return;;
+        _<- return;;
     *);;
 
 

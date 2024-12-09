@@ -76,15 +76,13 @@ _<= nrel_decomposition_of_action:: .._actions (*
 
         _=> nrel_goto:: .._agent_determine_number_of_graphs_for_task_wait_operator;;
     *);;
-    
-    
+        
     _-> .._agent_determine_number_of_graphs_for_task_wait_operator (*
         _<- waitReturn;;
         _-> rrel_1:: rrel_fixed:: rrel_scp_var:: _descr;;
 
         _=> nrel_goto:: .._agent_determine_number_of_graphs_for_task_take_result;;
     *);;
-
 
     _-> .._agent_determine_number_of_graphs_for_task_take_result (*
         _<- genElStr5;;
@@ -108,6 +106,5 @@ _<= nrel_decomposition_of_action:: .._actions (*
     *);;
 
 *);;
-
 
 *];;
