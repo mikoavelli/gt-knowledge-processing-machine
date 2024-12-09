@@ -165,19 +165,20 @@ _<= nrel_decomposition_of_action:: .._actions (*
 
     _-> .._random1 (*
         _<- contRandom;;
-        _-> rrel_1:: rrel_fixed:: rrel_scp_const:: [3];;
-        _-> rrel_2:: rrel_fixed:: rrel_scp_const:: [10];;
-        _-> rrel_3:: rrel_assign:: rrel_scp_const:: _random_number1;;
+        _-> rrel_1:: rrel_assign:: rrel_scp_var:: _random_number1;;
+        _-> rrel_2:: rrel_fixed:: rrel_scp_const:: [3];;
+        _-> rrel_3:: rrel_fixed:: rrel_scp_const:: [10];;
+        
 
         _=> nrel_goto:: .._random2;;
     *);;
 
     _-> .._random2 (*
         _<- contRandom;;
-        _-> rrel_1:: rrel_fixed:: rrel_scp_const:: [0];;
-        _-> rrel_2:: rrel_fixed:: rrel_scp_const:: [100];;
-        _-> rrel_3:: rrel_assign:: rrel_scp_const:: _random_number2;;
-
+        _-> rrel_1:: rrel_assign:: rrel_scp_var:: _random_number2;;
+        _-> rrel_2:: rrel_fixed:: rrel_scp_const:: [0];;
+        _-> rrel_3:: rrel_fixed:: rrel_scp_const:: [100];;
+        
         _=> nrel_goto:: .._operator6;;
     *);;
 
@@ -193,7 +194,7 @@ _<= nrel_decomposition_of_action:: .._actions (*
     _-> .._operator7 (*
         _<- genElStr3;;
         _-> rrel_1:: rrel_fixed:: rrel_scp_const:: action;;
-        _-> rrel_2:: rrel_assign:: rrel_scp_var:: rrel_pos_xonst_perm:: _arc_to_action_new;;
+        _-> rrel_2:: rrel_assign:: rrel_scp_var:: rrel_pos_const_perm:: _arc_to_action_new;;
         _-> rrel_3:: rrel_fixed:: rrel_scp_var:: _new_action_generate_random_graph;;
 
         _=> nrel_goto:: .._operator8;;
